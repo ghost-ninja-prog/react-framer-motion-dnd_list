@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Roboto:wght@400;500&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font: 16px/1.4 'Roboto', sans-serif;
+    box-sizing: border-box;
+    background-color: #3F72AF;
+    padding: 30px;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.container {
+    max-width: 1920px;
+    padding: 20px;
+}
+
+.centerXY {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.kanban-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    column-gap: 20px;
+}

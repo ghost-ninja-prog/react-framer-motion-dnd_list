@@ -1,23 +1,24 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import Board from './components/Board/Board'
+import { Reorder } from 'framer-motion';
 
 function App() {
+
+  const initialState = ['Board 1', 'Board 2']
+  const [boards, setBoards] = useState(initialState)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='kanban-container'>
+      <Reorder.Group axis='x' values={boards} onReorder={setBoards} className='board-container'>
+        {
+          boards.map(board => (
+            <Reorder.Item key={board} value={board} >
+              <Board title={board} />
+            </Reorder.Item>
+          ))
+        }
+      </Reorder.Group>
     </div>
   );
 }
